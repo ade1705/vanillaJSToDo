@@ -12,6 +12,9 @@ class ToDoRepository
     count() {
         return this.toDos.length;
     }
+    setAsComplete(todo) {
+        todo.setStatus('complete');
+    }
 }
 
 module.exports = ToDoRepository;

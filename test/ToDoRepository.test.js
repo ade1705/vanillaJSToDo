@@ -10,3 +10,11 @@ test('Test Repository to see if it adds and counts', () => {
 
     expect(repo.count()).toEqual(2);
 });
+
+test('Test Repository to see if it sets as complete', () => {
+    let todo = new toDo();
+    let todoRepository = new toDoRepository();
+    expect(todo.isComplete()).toEqual(false);
+    todoRepository.setAsComplete(todo);
+    expect(todo.isComplete()).toEqual(true);
+});

@@ -3,7 +3,7 @@ class ToDo
     title = '';
     dueDate = new Date();
     type = 'random';
-    status = 'not done';
+    status = 'incomplete';
     priority = 'low';
 
     setTitle(title) {
@@ -28,6 +28,10 @@ class ToDo
 
     getTitle() {
         return this.title;
+    }
+
+    isComplete() {
+        return (this.status === 'complete');
     }
 }
 
