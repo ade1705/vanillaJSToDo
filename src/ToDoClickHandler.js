@@ -13,13 +13,13 @@ export const ToDoClickHandler = (todoRepository) => {
     const handle = (event, callback) => {
         if (event.target.classList.contains("delete")) {
             deleteHandler(event);
+            callback();
         }
 
         if (event.target.classList.contains("checkbox-custom")) {
             statusHandler(event);
+            callback();
         }
-
-        callback
     };
 
     return ({ handle })

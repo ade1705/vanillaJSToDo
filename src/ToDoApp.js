@@ -1,6 +1,5 @@
 import {ToDoClickHandler} from "./ToDoClickHandler";
 
-
 export default class ToDoApp {
     constructor(todoFactory, todoHtmlCreator, todoRepository) {
         this.todoFactory = todoFactory;
@@ -9,8 +8,8 @@ export default class ToDoApp {
         this.todoFactory.create(5).forEach((todo) => {
             this.todoRepository.add(todo);
         });
-        this.todoHandler = ToDoClickHandler(this.todoRepository);
-        document.body.addEventListener("click",  (event) => this.todoHandler.handle(event, this.render()));
+        this.todoClickHandler = ToDoClickHandler(this.todoRepository);
+        document.body.addEventListener("click",  (event) => this.todoClickHandler.handle(event, () => this.render()));
     }
 
     render() {

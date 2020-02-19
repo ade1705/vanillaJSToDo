@@ -34,5 +34,6 @@ export default class ToDoRepository
     }
     deleteById(id) {
         this.delete(this.findById(id));
+        console.log(this.toDos);
     }
 }
